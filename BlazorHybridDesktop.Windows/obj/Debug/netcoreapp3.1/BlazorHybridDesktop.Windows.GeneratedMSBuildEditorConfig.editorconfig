@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = BlazorHybridDesktop.Windows
+build_property.ProjectDir = C:\Git\BlazorHybridDesktop\BlazorHybridDesktop.Windows\
