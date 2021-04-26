@@ -6,15 +6,9 @@ namespace BlazorHybridDesktop.WebUI.Pages
     {
         [Inject] public CounterState CounterState { get; set; }
 
-        protected override void OnInitialized()
-        {
-            CounterState.StateChanged += StateHasChanged;
-        }
+        protected override void OnInitialized() => CounterState.StateChanged += StateHasChanged;
 
-        public void Dispose()
-        {
-            CounterState.StateChanged -= StateHasChanged;
-        }
+        public void Dispose() => CounterState.StateChanged -= StateHasChanged;
     }
 }
 

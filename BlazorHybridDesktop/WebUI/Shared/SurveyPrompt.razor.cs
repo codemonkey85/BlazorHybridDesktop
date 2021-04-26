@@ -9,9 +9,6 @@ namespace BlazorHybridDesktop.WebUI.Shared
         [Parameter]
         public string Title { get; set; }
 
-        async Task LaunchSurvey()
-        {
-            await Launcher.OpenAsync("https://go.microsoft.com/fwlink/?linkid=2121313");
-        }
+        async Task LaunchSurvey() => await Launcher.OpenAsync("https://go.microsoft.com/fwlink/?linkid=2121313");
     }
 }

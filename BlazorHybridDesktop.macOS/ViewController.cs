@@ -19,10 +19,7 @@ namespace BlazorHybridDesktop.macOS
 
         public override NSObject RepresentedObject
         {
-            get
-            {
-                return base.RepresentedObject;
-            }
+            get => base.RepresentedObject;
             set
             {
                 base.RepresentedObject = value;
