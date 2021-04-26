@@ -1,16 +1,11 @@
-﻿@inject CounterState CounterState
-
-<ContentView>
-    <StackLayout>
-
+﻿<ContentView>
+    @*<StackLayout>
         <StackLayout Margin="new Thickness(20)" Orientation="StackOrientation.Horizontal">
             <Label Text="@($"Hello, World! {CounterState.CurrentCount}")" FontSize="40" HorizontalOptions="LayoutOptions.StartAndExpand" />
             <Button Text="Increment" OnClick="@CounterState.IncrementCount" VerticalOptions="LayoutOptions.Center" Padding="10" />
-        </StackLayout>
-        @*
-                <BlazorWebView VerticalOptions="LayoutOptions.FillAndExpand">
-                <BlazorHybridDesktop.WebUI.App />
-            </BlazorWebView>
-        *@
-    </StackLayout>
+        </StackLayout>*@
+        <BlazorWebView VerticalOptions="LayoutOptions.FillAndExpand">
+            <BlazorHybridDesktop.WebUI.App />
+        </BlazorWebView>
+    @*</StackLayout>*@
 </ContentView>
