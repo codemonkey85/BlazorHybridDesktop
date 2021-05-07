@@ -6,12 +6,14 @@
         </StackLayout>
         @if (todos != null)
         {
-            <StackLayout Margin="new Thickness(20)" Orientation="StackOrientation.Vertical">
-                @foreach (Todo todo in todos.Take(10))
-                {
-                    <TodoComponent Todo="todo" />
-                }
-            </StackLayout>
+            <ScrollView Orientation="ScrollOrientation.Vertical">
+                <StackLayout Orientation="StackOrientation.Vertical">
+                    @foreach (Todo todo in todos.Take(10))
+                    {
+                        <TodoComponent Todo="todo" />
+                    }
+                </StackLayout>
+            </ScrollView>
         }
         @*
             <BlazorWebView VerticalOptions="LayoutOptions.FillAndExpand">
