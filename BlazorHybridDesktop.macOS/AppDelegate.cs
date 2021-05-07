@@ -12,7 +12,7 @@ namespace BlazorHybridDesktop.macOS
             CoreGraphics.CGRect rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);
             MainWindow = new NSWindow(rect, style, NSBackingStore.Buffered, false)
             {
-                Title = "My Application",
+                Title = GlobalConstants.AppName,
                 TitleVisibility = NSWindowTitleVisibility.Visible,
             };
         }

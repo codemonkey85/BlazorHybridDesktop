@@ -31,7 +31,7 @@ namespace BlazorHybridDesktop
             }
             IHost host = hostBuilder.Build();
 
-            MainPage = new ContentPage { Title = "My Application" };
+            MainPage = new ContentPage { Title = GlobalConstants.AppName };
             host.AddComponent<Main>(parent: MainPage);
         }
 
