@@ -1,10 +1,2 @@
 @page "/"
-@if (TodosState.Todos != null)
-{
-    <ul>
-        @foreach (Todo todo in TodosState.Todos.Take(10))
-        {
-            <TodoWebComponent Todo="todo" />
-        }
-    </ul>
-}
+<IndexComponent />
