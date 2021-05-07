@@ -1,0 +1,7 @@
+﻿@if (Todo != null)
+{
+    <li>
+        <input type="checkbox" @bind="@Todo.Completed">
+        <label>@Todo.Title</label>
+    </li>
+}

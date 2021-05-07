@@ -1,24 +1,28 @@
 ﻿<ContentView>
     <StackLayout>
         <StackLayout Margin="new Thickness(20)" Orientation="StackOrientation.Horizontal">
-            <Label Text="@($"{LabelTitle} {CounterState.CurrentCount}")" FontSize="40" HorizontalOptions="LayoutOptions.StartAndExpand" />
-            <Button Text="Increment" OnClick="@CounterState.IncrementCount" VerticalOptions="LayoutOptions.Center" Padding="10" />
+            <Label Text="@($"{LabelTitle}")" FontSize="40" HorizontalOptions="LayoutOptions.StartAndExpand" />
+            <Label Text="Show web?" /> <Switch IsToggledChanged="CheckboxClicked" />
         </StackLayout>
-        @if (TodosState.Todos != null)
+        @if (ShowWeb)
         {
-            <ScrollView Orientation="ScrollOrientation.Vertical">
-                <StackLayout Orientation="StackOrientation.Vertical">
-                    @foreach (Todo todo in TodosState.Todos.Take(10))
-                    {
-                        <TodoComponent Todo="todo" />
-                    }
-                </StackLayout>
-            </ScrollView>
-        }
-        @*
             <BlazorWebView VerticalOptions="LayoutOptions.FillAndExpand">
                 <BlazorHybridDesktop.WebUI.App />
             </BlazorWebView>
-        *@
+        }
+        else
+        {
+            @if (TodosState.Todos != null)
+            {
+                <ScrollView Orientation="ScrollOrientation.Vertical">
+                    <StackLayout Orientation="StackOrientation.Vertical">
+                        @foreach (Todo todo in TodosState.Todos.Take(10))
+                        {
+                            <TodoComponent Todo="todo" />
+                        }
+                    </StackLayout>
+                </ScrollView>
+            }
+        }
     </StackLayout>
 </ContentView>
