@@ -7,16 +7,16 @@ namespace BlazorHybridDesktop
     {
         [Inject] private CounterState CounterState { get; set; }
 
-        [Inject] private HttpClient HttpClient { get; set; }
+        [Inject] private TodosState TodosState { get; set; }
 
-        private Todo[] todos { get; set; }
+        [Inject] private HttpClient HttpClient { get; set; }
 
         private string LabelTitle { get; set; } = "Hello, World!";
 
         protected override async void OnInitialized()
         {
             CounterState.StateChanged += StateHasChanged;
-            todos = await HttpClient.GetAllTodos();
+            TodosState.Todos = await HttpClient.GetAllTodos();
             StateHasChanged();
         }
 

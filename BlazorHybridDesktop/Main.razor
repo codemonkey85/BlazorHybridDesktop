@@ -4,11 +4,11 @@
             <Label Text="@($"{LabelTitle} {CounterState.CurrentCount}")" FontSize="40" HorizontalOptions="LayoutOptions.StartAndExpand" />
             <Button Text="Increment" OnClick="@CounterState.IncrementCount" VerticalOptions="LayoutOptions.Center" Padding="10" />
         </StackLayout>
-        @if (todos != null)
+        @if (TodosState.Todos != null)
         {
             <ScrollView Orientation="ScrollOrientation.Vertical">
                 <StackLayout Orientation="StackOrientation.Vertical">
-                    @foreach (Todo todo in todos.Take(10))
+                    @foreach (Todo todo in TodosState.Todos.Take(10))
                     {
                         <TodoComponent Todo="todo" />
                     }

@@ -20,6 +20,7 @@ namespace BlazorHybridDesktop
 
                     // Register app-specific services
                     services.AddSingleton<CounterState>();
+                    services.AddSingleton<TodosState>();
 
                     services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://jsonplaceholder.typicode.com/") });
                 })
