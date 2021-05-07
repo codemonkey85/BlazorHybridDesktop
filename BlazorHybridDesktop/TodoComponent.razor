@@ -1,0 +1,7 @@
+﻿@if (Todo != null)
+{
+    <StackLayout Margin="new Thickness(20)" Orientation="StackOrientation.Horizontal">
+        <CheckBox @bind-IsChecked="@Todo.Completed" />
+        <Label Text="@Todo.Title" />
+    </StackLayout>
+}

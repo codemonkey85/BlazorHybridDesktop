@@ -1,9 +1,18 @@
 ﻿<ContentView>
     <StackLayout>
         <StackLayout Margin="new Thickness(20)" Orientation="StackOrientation.Horizontal">
-            <Label Text="@($"Hello, World! {CounterState.CurrentCount}")" FontSize="40" HorizontalOptions="LayoutOptions.StartAndExpand" />
+            <Label Text="@($"{LabelTitle} {CounterState.CurrentCount}")" FontSize="40" HorizontalOptions="LayoutOptions.StartAndExpand" />
             <Button Text="Increment" OnClick="@CounterState.IncrementCount" VerticalOptions="LayoutOptions.Center" Padding="10" />
         </StackLayout>
+        @if (todos != null)
+        {
+            <StackLayout Margin="new Thickness(20)" Orientation="StackOrientation.Vertical">
+                @foreach (Todo todo in todos.Take(10))
+                {
+                    <TodoComponent Todo="todo" />
+                }
+            </StackLayout>
+        }
         @*
             <BlazorWebView VerticalOptions="LayoutOptions.FillAndExpand">
                 <BlazorHybridDesktop.WebUI.App />

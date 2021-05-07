@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using System.Net.Http;
 
 namespace BlazorHybridDesktop
 {
@@ -6,7 +7,18 @@ namespace BlazorHybridDesktop
     {
         [Inject] private CounterState CounterState { get; set; }
 
-        protected override void OnInitialized() => CounterState.StateChanged += StateHasChanged;
+        [Inject] private HttpClient HttpClient { get; set; }
+
+        private Todo[] todos { get; set; }
+
+        private string LabelTitle { get; set; } = "Hello, World!";
+
+        protected override async void OnInitialized()
+        {
+            CounterState.StateChanged += StateHasChanged;
+            todos = await HttpClient.GetAllTodos();
+            StateHasChanged();
+        }
 
         public void Dispose() => CounterState.StateChanged -= StateHasChanged;
     }

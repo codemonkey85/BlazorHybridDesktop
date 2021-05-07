@@ -2,7 +2,9 @@
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.MobileBlazorBindings;
+using System.Net.Http;
 using Xamarin.Forms;
+using System;
 
 namespace BlazorHybridDesktop
 {
@@ -18,6 +20,8 @@ namespace BlazorHybridDesktop
 
                     // Register app-specific services
                     services.AddSingleton<CounterState>();
+
+                    services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://jsonplaceholder.typicode.com/") });
                 })
                 .UseWebRoot("wwwroot");
 
