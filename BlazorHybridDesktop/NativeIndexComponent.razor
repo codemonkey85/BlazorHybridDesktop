@@ -1,0 +1,11 @@
+﻿@if (TodosState.Todos != null)
+{
+    <ScrollView Orientation="ScrollOrientation.Vertical">
+        <StackLayout Orientation="StackOrientation.Vertical">
+            @foreach (Todo todo in TodosState.Todos.Take(10))
+            {
+                <TodoComponent Todo="todo" />
+            }
+        </StackLayout>
+    </ScrollView>
+}

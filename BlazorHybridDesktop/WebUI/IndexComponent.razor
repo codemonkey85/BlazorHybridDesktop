@@ -1,6 +1,6 @@
 ﻿@if (TodosState.Todos != null)
 {
-    <ul>
+    <ul class="no-bullets">
         @foreach (Todo todo in TodosState.Todos.Take(10))
         {
             <TodoWebComponent Todo="todo" />
