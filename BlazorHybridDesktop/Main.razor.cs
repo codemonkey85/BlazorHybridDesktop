@@ -15,7 +15,10 @@ namespace BlazorHybridDesktop
 
         protected override async void OnInitialized()
         {
-            TodosState.Todos = await HttpClient.GetAllTodos();
+            if (TodosState.Todos == null)
+            {
+                TodosState.Todos = await HttpClient.GetAllTodos();
+            }
             StateHasChanged();
         }
 
